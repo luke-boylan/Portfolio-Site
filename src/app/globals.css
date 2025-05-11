@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #c0c0c0;
   --foreground: #171717;
+}
+
+.statusBlock {
+  background: #eeeeee;
+
 }
 
 @theme inline {
@@ -12,12 +17,16 @@
   --font-mono: var(--font-geist-mono);
 }
 
+
+/*
+Don't care about user's dark or light mode settings as of right now
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #c43030;
     --foreground: #ededed;
   }
-}
+}*/
 
 body {
   background: var(--background);
