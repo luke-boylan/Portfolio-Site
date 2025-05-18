@@ -35,7 +35,9 @@ export default function Home() {
             <span className="underline text-2xl font-bold">
               Projects
             </span>
-            <ProjectBox image="" description ="A student timetable app with built in chatbot created for my Software Engineering Project class."/>
+            <span className=""> The good stuff...</span>
+            <ProjectBox title="Genesys Student chatbot Timetable app" image="/GenesysProject.png" description ="A student timetable app with built in chatbot created for my Software Engineering Project class."/>
+            <ProjectBox title="Proxy Web Server" image="/WebProxy.png" description ="A Thing I made for my Advanced Computer Networks class"/>
           </div>
 
       </main>
