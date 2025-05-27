@@ -7,8 +7,8 @@
 
 .statusBlock {
   background: #eeeeee;
-
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -16,7 +16,6 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
 
 /*
 Don't care about user's dark or light mode settings as of right now

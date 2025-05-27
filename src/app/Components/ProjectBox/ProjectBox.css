@@ -1,0 +1,10 @@
+.magnifyingGlassOn {
+  visibility: visible;
+  color:rgb(161, 161, 161);
+  opacity: 0.5;
+  
+}
+
+.magnifyingGlassOff {
+  visibility: hidden;
+}

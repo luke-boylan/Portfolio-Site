@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "motion/react";
 import { useState } from "react";
-import ProjectBox  from "./Components/ProjectBox";
+import ProjectBox  from "./Components/ProjectBox/ProjectBox";
 
 export default function Home() {
 
