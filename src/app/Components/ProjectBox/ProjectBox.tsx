@@ -1,12 +1,9 @@
 import Image from "next/image";
-import { motion } from "motion/react"
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import "./ProjectBox.css";
 import {useState} from "react";
 import { Dialog, DialogPanel} from "@headlessui/react";
 import { FaGithub } from "react-icons/fa";
-import OverlaidImage from "./overlaidImage";
-import Link from "next/link";
 
 const ProjectBox = ({title, image, description, link}: {title:string, image:string, description:string, link:string}) => {
 
