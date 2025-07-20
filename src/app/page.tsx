@@ -1,12 +1,7 @@
 "use client"
-import { useState } from "react";
 import ProjectBox  from "./Components/ProjectBox/ProjectBox";
 
 export default function Home() {
-
-  const [brightness, setBrightness] = useState(10);
-
-  "use client"
 
 /*
 export default function HTMLContent() {
@@ -30,7 +25,7 @@ export default function HTMLContent() {
           </span>
           </div>
           <span>
-            Hello 👋👷, I'm currently building this website!!!
+            Hello 👋👷, I&apos;m currently building this website!!!
           </span>
         </div>
 
