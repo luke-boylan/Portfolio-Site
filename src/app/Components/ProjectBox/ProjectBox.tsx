@@ -4,9 +4,11 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import "./ProjectBox.css";
 import {useState} from "react";
 import { Dialog, DialogPanel} from "@headlessui/react";
+import { FaGithub } from "react-icons/fa";
 import OverlaidImage from "./overlaidImage";
+import Link from "next/link";
 
-const ProjectBox = ({title, image, description}: {title:string, image:string, description:string}) => {
+const ProjectBox = ({title, image, description, link}: {title:string, image:string, description:string, link:string}) => {
 
     const [magnifyingGlass, setVisibility] = useState("magnifyingGlassOff");
 
@@ -44,8 +46,16 @@ const ProjectBox = ({title, image, description}: {title:string, image:string, de
                             </DialogPanel>
                         </div>
                     </Dialog>
-                <div className="w-lg content-center">
-                    <span className="wrap-normal text-center">{description}</span>
+                <div className="w-lg grid">
+                    <span className="wrap-normal text-center self-end">{description}</span>
+                    <div className = "self-end flex">
+                        <a href={link} target="_blank">
+                            <div className="flex border border-double border-4 pl-2 pr-2 pt-1 pb-1 gap-2 items-center bg-orange-300">
+                                <FaGithub className="self-center"></FaGithub>
+                                <span className="">Github Link</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
