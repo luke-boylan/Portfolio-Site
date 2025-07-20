@@ -3,7 +3,7 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import React from "react";
 import Image from "next/image";
 
-export default function overlaidImage({children, url}: {children:React.ReactNode, url:string}) {
+export default function OverlaidImage({children, url}: {children:React.ReactNode, url:string}) {
     const [isOpen, setIsOpen] = useState(false);
 
     return(
