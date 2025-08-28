@@ -15,7 +15,7 @@ export default function Home() {
 
   // creates char array given ascii value integer range
   function range(lower : number, higher : number){
-    let chars = [];
+    const chars = [];
     for(let i = lower; i<= higher; i++)
     {
       chars.push(String.fromCharCode(i));
@@ -46,7 +46,7 @@ export default function Home() {
   useEffect(() =>
   {
     setTimeout(() => {
-      let newString: String[] = [];
+      const newString: string[] = [];
       for(let i = 0; i<myName.length ; i++)
       {
         if( i == 4)
