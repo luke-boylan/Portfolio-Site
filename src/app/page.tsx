@@ -1,11 +1,80 @@
-"use client"
+"use client";
+
 import ProjectBox  from "./Components/ProjectBox/ProjectBox";
 import Header from "./Components/Header/Header";
+import { useState, useEffect } from 'react';
+
+let nameIndex = 0;
+let timer = 1500;
 
 export default function Home() {
 
+  const [text, setText] = useState("Luke Boylan");
+  const [mangle, setMangle] = useState(false);
+  const myName = "Luke Boylan";
+
+  // creates char array given ascii value integer range
+  function range(lower : number, higher : number){
+    let chars = [];
+    for(let i = lower; i<= higher; i++)
+    {
+      chars.push(String.fromCharCode(i));
+    }
+    return chars;
+  }
+
+  // create characters array
+  const lowercase = range(97, 122); // 'a' -> 'z'
+  const uppercase = range(65, 90);  // 'A' -> 'Z'
+  const digits = range(48, 57);     // '0' -> '9'
+  const symbols = ["!", "@", "#", "$", "%", "&", "*", "?", "+", "-", "_", "=", "/", "~"];
+  const characters = [...lowercase, ...uppercase, ...digits, ...symbols];
+
+  // useEffect function to slowly show my name
+  useEffect(() =>
+  {
+    setTimeout(() => {
+      if(!mangle){
+        nameIndex=nameIndex+1;
+        timer = 100;
+      }
+    }, timer);
+  }, [nameIndex]);
+
+
+  // useEffect function to change the characters in my name
+  useEffect(() =>
+  {
+    setTimeout(() => {
+      let newString: String[] = [];
+      for(let i = 0; i<myName.length ; i++)
+      {
+        if( i == 4)
+        {
+          newString.push(" ");
+          continue;
+        }
+        let randomIndex = Math.round(Math.random() * characters.length);
+
+        // catch the case where the new index is the last element in the array
+        if(text === characters[randomIndex])
+        {
+          if (randomIndex == characters.length - 1)
+            randomIndex--;
+          else
+            randomIndex++;
+        }
+
+        newString.push(characters[randomIndex]);
+      }
+      // turns the string array into a string
+      setText(myName.substring(0, nameIndex) + newString.join("").substring(nameIndex));
+    }, 75);
+  }, [text, mangle]);
+
+
   return (
-    <div className="grid items-center justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen">
       <Header></Header>
       <div className="statusBlock absolute rounded-3xl p-8 top-8 left-8">
         <div className= "bottom-4">
@@ -18,11 +87,29 @@ export default function Home() {
         </span>
       </div>
 
-      <div className="relative">
-          <h1 className="text-6xl">
-            Luke Boylan
+      <div className="relative justify-self-center">
+          <h1 className="text-6xl absolute text-nowrap" 
+
+            onMouseEnter={()=>{
+              // 11 is the length of my name. nameIndex will surpass this. this prevents fucking with the initial site name animation
+              if(nameIndex > 11)
+              {
+                nameIndex = 0; 
+                setMangle(true); 
+              }
+              }} 
+            
+            onMouseLeave={()=>{
+              if(mangle === true)
+              {
+                nameIndex = 20; 
+                setMangle(false);
+              }
+              }}>
+              
+            {text}
           </h1>
-          <h3>
+          <h3 className="pt-16">
             4th year CS student @ Trinity College Dublin
           </h3>
       </div>
