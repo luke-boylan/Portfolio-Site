@@ -4,6 +4,7 @@ import "./ProjectBox.css";
 import {useState} from "react";
 import { Dialog, DialogPanel} from "@headlessui/react";
 import { FaGithub } from "react-icons/fa";
+import { FaPlay } from 'react-icons/fa';
 
 const ProjectBox = ({title, image, description, link}: {title:string, image:string, description:string, link:string}) => {
 
@@ -19,7 +20,21 @@ const ProjectBox = ({title, image, description, link}: {title:string, image:stri
         }
     }
 
+    function Video({title}:{title:string})
+    {
+        if(title === "Morse Code Microcontroller Game")
+        {
+            return <div className="flex border border-double border-4 pl-2 pr-2 pt-1 pb-1 gap-2 items-center bg-blue-300 cursor-pointer" onClick={()=>setVideoOpen(true)}>
+                        <FaPlay className="self-center"></FaPlay>
+                        <span className="">Video Demo</span>
+                    </div>
+                
+        }
+        return <></>
+    }
+
     const [imageOpen, setImageOpen] = useState(false);
+    const [videoOpen, setVideoOpen] = useState(false);
 
     return (
         <div className= "w-250 p-6 m-8 bg-white rounded-2xl">
@@ -39,19 +54,30 @@ const ProjectBox = ({title, image, description, link}: {title:string, image:stri
                                 width={1200}
                                 height={1200}
                                 className="max-w-full h-auto"
+                                onClick={() => setImageOpen(false)}
                             />
+                            </DialogPanel>
+                        </div>
+                    </Dialog>
+                    <Dialog open={videoOpen} onClose={() => setVideoOpen(false)} className="relative z-50">
+                        <div className="fixed inset-0 flex items-center justify-center p-4 backdrop-brightness-75 backdrop-blur-md">
+                            <DialogPanel className="bg-white ">
+                                <video controls className="w-300 h-full">
+                                    <source src="Project demonstration video.mp4" type="video/mp4"></source>
+                                </video>
                             </DialogPanel>
                         </div>
                     </Dialog>
                 <div className="w-lg grid">
                     <span className="wrap-normal text-center self-end">{description}</span>
-                    <div className = "self-end flex">
+                    <div className = "self-end flex gap-16">
                         <a href={link} target="_blank">
                             <div className="flex border border-double border-4 pl-2 pr-2 pt-1 pb-1 gap-2 items-center bg-orange-300">
                                 <FaGithub className="self-center"></FaGithub>
                                 <span className="">Github Link</span>
                             </div>
                         </a>
+                        <Video title={title}></Video>
                     </div>
                 </div>
             </div>

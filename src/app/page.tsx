@@ -9,6 +9,11 @@ let timer = 1500;
 
 export default function Home() {
 
+  // ensures viewport at top of screen when page refreshes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [text, setText] = useState("Luke Boylan");
   const [mangle, setMangle] = useState(false);
   const myName = "Luke Boylan";
@@ -74,7 +79,7 @@ export default function Home() {
 
 
   return (
-    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen">
+    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-full">
       <Header></Header>
       <div className="statusBlock absolute rounded-3xl p-8 top-8 left-8">
         <div className= "bottom-4">
