@@ -74,7 +74,7 @@ export default function Home() {
 
 
   return (
-    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen">
+    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen md:w-full">
       <Header></Header>
       <div className="statusBlock absolute rounded-3xl p-8 top-8 left-8">
         <div className= "bottom-4">
