@@ -60,7 +60,7 @@ const ProjectBox = ({title, image, description, link}: {title:string, image:stri
                     </Dialog>
                     <Dialog open={videoOpen} onClose={() => setVideoOpen(false)} className="relative z-50">
                         <div className="fixed inset-0 flex items-center justify-center p-4 backdrop-brightness-75 backdrop-blur-md">
-                            <DialogPanel className="bg-white ">
+                            <DialogPanel className="bg-white md:scale-80">
                                 <video controls className="w-300 h-full">
                                     <source src="Project demonstration video.mp4" type="video/mp4"></source>
                                 </video>
