@@ -47,20 +47,21 @@ const ProjectBox = ({title, image, description, link}: {title:string, image:stri
                     </div>
                     <Dialog open={imageOpen} onClose={() => setImageOpen(false)} className="relative z-50">
                         <div className="fixed inset-0 flex items-center justify-center p-4 backdrop-brightness-75 backdrop-blur-md">
-                            <DialogPanel className="bg-white md:scale-80 lg:scale-100">
+                            <DialogPanel className="bg-white xl:scale-80 2xl:scale-100">
                             <Image
                                 alt="Expanded"
                                 src={image}
                                 width={1200}
                                 height={1200}
-                                className="lg:max-w-full h-auto md:w-auto"
+                                className="2xl:max-w-full h-auto xl:w-auto"
+                                onClick={()=> setImageOpen(false)}
                             />
                             </DialogPanel>
                         </div>
                     </Dialog>
                     <Dialog open={videoOpen} onClose={() => setVideoOpen(false)} className="relative z-50">
                         <div className="fixed inset-0 flex items-center justify-center p-4 backdrop-brightness-75 backdrop-blur-md">
-                            <DialogPanel className="bg-white md:scale-80 lg:scale-100">
+                            <DialogPanel className="bg-white xl:scale-80 2xl:scale-100">
                                 <video controls className="w-300 h-full">
                                     <source src="Project demonstration video.mp4" type="video/mp4"></source>
                                 </video>
