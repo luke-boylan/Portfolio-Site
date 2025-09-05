@@ -79,7 +79,7 @@ export default function Home() {
 
 
   return (
-    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen md:w-full">
+    <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen md:w-full bg-linear-to-b from-cyan-400 to-blue-600">
       <Header></Header>
       <div className="statusBlock absolute rounded-3xl p-8 top-8 left-8">
         <div className= "bottom-4">
@@ -119,7 +119,7 @@ export default function Home() {
           </h3>
       </div>
 
-      <div className="border rounded bg-sky-200/25 p-4 relative">
+      <div className="border rounded bg-sky-200/75 p-4 relative">
         <span className="underline text-2xl font-bold">
           Projects
         </span>
