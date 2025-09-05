@@ -47,7 +47,7 @@ const ProjectBox = ({title, image, description, link}: {title:string, image:stri
                     </div>
                     <Dialog open={imageOpen} onClose={() => setImageOpen(false)} className="relative z-50">
                         <div className="fixed inset-0 flex items-center justify-center p-4 backdrop-brightness-75 backdrop-blur-md">
-                            <DialogPanel className="bg-white xl:scale-80 2xl:scale-100">
+                            <DialogPanel className="bg-white xl:scale-80 2xl:scale-110">
                             <Image
                                 alt="Expanded"
                                 src={image}

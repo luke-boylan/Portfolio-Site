@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <div className="grid justify-items-center pb-20 gap-16 font-[family-name:var(--font-geist-sans)] w-screen md:w-full bg-linear-to-b from-cyan-400 to-blue-600">
       <Header></Header>
-      <div className="statusBlock absolute rounded-3xl p-8 top-8 left-8">
+      <div className="statusBlock absolute rounded-3xl p-8 top-8 left-8 shadow-xl/30">
         <div className= "bottom-4">
         <span className="font-bold">
           Dev status:
@@ -90,6 +90,13 @@ export default function Home() {
         <span>
           Hello 👋👷, I&apos;m currently building this website!!!
         </span>
+        <div className="self-end pt-4 pl-2 font-medium">
+          I am currently self learning
+          <ul className="list-disc text-sm pl-4 font-normal">
+            <li>C++</li>
+            <li>Bitcoin/Blockchain Basics</li>
+          </ul>
+        </div>
       </div>
 
       <div className="relative justify-self-center">
